@@ -31,6 +31,7 @@
 git clone https://github.com/maduardar/squad
 cd squad/
 ```
+* Скачайте обученную модель по [ссылке](https://drive.google.com/uc?export=download&id=13q8Nflt1Nowy8jCL_ZOInnHo496Ji1Qd) и переместите в папку Weights
 * Затем выполните загрузку и предобработку данных:
 ``` 
 sudo python3 prepare.py
