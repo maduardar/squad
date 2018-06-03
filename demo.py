@@ -6,12 +6,8 @@ import tqdm
 from tqdm import tqdm_notebook as tqdm
 import h5py
 from utils import tokenize, find, pad_sequence, padding, predict_answer
-import urllib.request as urllib
 
-url = 'https://drive.google.com/uc?export=download&id='
-model_ver = '1B7S98mbaecRhPWl4EYIuyGGAbsHUO2yx'
 model_path = 'Weights/new_model.h5'
-urllib.urlretrieve(url + model_ver, model_path)
 
 word_dict = np.load('Prepared data/word2ind.npy').item()
 ind_dict = np.load('Prepared data/ind2word.npy').item()
