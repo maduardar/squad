@@ -5,3 +5,4 @@ tensorflow==1.8.0
 numpy
 tqdm
 h5py
+os
