@@ -17,7 +17,7 @@ def get_glove_file_path():
     VERSION = 'glove.840B.300d'
 
     origin = '{server}{version}.zip'.format(server=SERVER, version=VERSION)
-    cache_dir = path.join(path.abspath(path.dirname(__file__)), 'data')
+    cache_dir = path.join(path.abspath(path.dirname(__file__)), 'Data')
 
     fname = '/tmp/glove.zip'
     get_file(fname,
