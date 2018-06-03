@@ -15,6 +15,15 @@ from keras import backend as K
 
 from theano import ifelse
 
+from os import path
+import urllib.request as urllib
+
+url = 'https://drive.google.com/uc?export=download&id='
+model_ver = '1B7S98mbaecRhPWl4EYIuyGGAbsHUO2yx'
+model_path = 'Weights/new_model.h5'
+if not path.exists(model_path):
+    urllib.urlretrieve(url + model_ver, model_path)
+
 path = 'Prepared data/'
 def h5load(file_name, emb=False):
     pth = path
@@ -42,9 +51,9 @@ vocab_size = len(word2ind)
 import model
 from model import RNet, custom_objects
 from keras.models import load_model
-
-model = load_model('Weights/new_model.h5', custom_objects=custom_objects())
-
+print('Loading pretrained model...')
+model = load_model(model_path, custom_objects=custom_objects())
+print('Done!')
 X, y_true = [context[:], questions[:]], [begin[:], end[:]]
 
 p = model.predict(X, verbose=1)
@@ -74,7 +83,6 @@ def F1_score(true, pred):
     for i in tqdm(range(n)):
         start_true, end_true = np.argmax(true[0][i]),  np.argmax(true[1][i])
         if start_true == end_true:
-            print('Error')
             k += 1
             continue
         start_pred, end_pred = predict_answer([pred[0][i], pred[1][i]])
