@@ -48,4 +48,4 @@ sudo python3 test.py
 sudo python3 demo.py
 ```
 ## Благодарности
-Хочу выразить огромную благодарность [Д. А.](https://github.com/dasimagin)[ Симагину](https://stackoverflow.com/), нашему [ментору](https://github.com/maduardar/G2P/blob/master/plm.jpg) и наставнику за то, что не умея программировать на Python  ещё пол года назад и не зная ничего о машинном обучении, этот проект всё же завершён. 
+Хочу выразить огромную благодарность [Д. А.](https://github.com/dasimagin)[ Симагину](https://stackoverflow.com/), нашему [ментору](https://github.com/maduardar/G2P/blob/master/plm.jpg) и наставнику за то, что помогал и поддерживал в течение всего проекте.
