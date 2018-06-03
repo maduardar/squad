@@ -1,3 +1,4 @@
+python3.6
 keras==2.0.6  //Важно!
 theano==1.0.1
 tensorflow==1.8.0
