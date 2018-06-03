@@ -15,14 +15,7 @@ from keras import backend as K
 
 from theano import ifelse
 
-from os import path
-import urllib.request as urllib
-
-url = 'https://drive.google.com/uc?export=download&id='
-model_ver = '1B7S98mbaecRhPWl4EYIuyGGAbsHUO2yx'
 model_path = 'Weights/new_model.h5'
-if not path.exists(model_path):
-    urllib.urlretrieve(url + model_ver, model_path)
 
 path = 'Prepared data/'
 def h5load(file_name, emb=False):
