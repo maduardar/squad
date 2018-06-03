@@ -11,6 +11,7 @@ import urllib.request as urllib
 from keras.utils.data_utils import get_file
 from os import path
 from utils import tokenize, find, pad_sequence, padding
+import urllib.request as urllib
 
 def get_glove_file_path():
     SERVER = 'http://nlp.stanford.edu/data/'
@@ -29,20 +30,30 @@ def get_glove_file_path():
     # Remove unnecessary .zip file and keep only extracted .txt version
     os.remove(fname)
     return path.join(cache_dir, VERSION) + '.txt'
-glove_file_path = 'Data/glove.840B.300d.txt'
-if not path.exists(glove_file_path):
-    glove_file_path = get_glove_file_path()
-    
 
 url = 'https://rajpurkar.github.io/SQuAD-explorer/dataset/'
 urllib.urlretrieve(url+'train-v1.1.json', './Data/train-v1.1.json')
 urllib.urlretrieve(url+'dev-v1.1.json', './Data/dev-v1.1.json')
-
+print('Loading train and dev sets...')
 with open('./Data/train-v1.1.json') as json_data:
     d = json.load(json_data)
 with open('./Data/dev-v1.1.json') as json_data:
     d1 = json.load(json_data)
+print('Done!')
 
+url = 'https://www.dropbox.com/s/exiyi2mf7afv5zo/new_model.h5?dl=1'
+model_path = 'Weights/new_model.h5'
+
+if not path.exists(model_path):
+    print('Loading pretrained model...')
+    urllib.urlretrieve(url, model_path)
+    print('Done!')
+else:
+    print('Pretrained model already exists!!! (yeah cool)')
+    
+glove_file_path = 'Data/glove.840B.300d.txt'
+if not path.exists(glove_file_path):
+    glove_file_path = get_glove_file_path()
 print('Data upload completed successfully!')
 print('Start preporation...')
 
@@ -143,4 +154,3 @@ np.save(dr + 'word2ind.npy', word_dict)
 np.save(dr + 'ind2word.npy', ind_dict)
 
 print('Success!')
-
