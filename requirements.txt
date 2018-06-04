@@ -1,8 +1,6 @@
-python3.6
-keras==2.0.6  //Важно!
+keras==2.0.6
 theano==1.0.1
 tensorflow==1.8.0
 numpy
 tqdm
 h5py
-os
