@@ -41,7 +41,7 @@ with open('./Data/dev-v1.1.json') as json_data:
     d1 = json.load(json_data)
 print('Done!')
 
-url = 'https://www.dropbox.com/s/exiyi2mf7afv5zo/new_model.h5?dl=1'
+url = 'https://www.dropbox.com/s/qtxf5qxabbmfs1v/model.h5?dl=1'
 model_path = 'Weights/new_model.h5'
 
 if not path.exists(model_path):
