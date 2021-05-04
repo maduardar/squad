@@ -4,7 +4,7 @@
 
 Works for Python3.6
 * install [requirements.txt](https://github.com/maduardar/squad/blob/master/requirements.txt)
-* clone repo
+* clone the repo
 ```
 git clone https://github.com/maduardar/squad
 cd squad/
